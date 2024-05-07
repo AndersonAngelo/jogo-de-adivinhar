@@ -2,7 +2,7 @@
 
 <h2>Projeto foi desenvolvido em React + vite.</h2>
 
-- Link do projeto na vercel: https://jogo-de-advinhar-apsrgywbg-andersonangelos-projects.vercel.app/
+- Link do projeto na vercel: https://jogo-de-advinhar-8bpc51xoi-andersonangelos-projects.vercel.app/
 
 - Para executar o código
 

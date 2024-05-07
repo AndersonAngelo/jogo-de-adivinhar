@@ -1,8 +1,10 @@
-#Projeto foi desenvolvido em React + vite.
+<h1>Jogo de advinhar</h1>
+
+<h2>Projeto foi desenvolvido em React + vite.</h2>
 
 - Link do projeto na vercel: https://jogo-de-advinhar-apsrgywbg-andersonangelos-projects.vercel.app/
 
-- <h1>Para executar o código</h1>
+- Para executar o código
 
 - yarn dev ou npm run dev
 

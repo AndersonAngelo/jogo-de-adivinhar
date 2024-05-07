@@ -76,11 +76,13 @@ function App() {
 
         case 'Chute maior':
           SetNumberScreen(false)
+          setInputValue('')
           quickMessage('O número secreto é menor que ' + inputValue +'.')
         break
 
         case 'Chute menor':
           SetNumberScreen(false)
+          setInputValue('')
           quickMessage('O número secreto é maior que ' + inputValue +'.')
         break
 
@@ -97,41 +99,39 @@ function App() {
     
 
   return (
-    <>
-      <div className='container'>
-        <div className='content'>
-          <div className='title'>
-            <img src={imgBall} alt="Bola de cristal" />
-            <h1>Jogo de adivinhar o número.</h1>
-          </div>
-          {!startGame ? (
-            <div className='viewerInitial'>
-              <h3>Para conseguir vencer o jogo, adivinhe qual o número foi gerado de forma aleatória de 1 a 100. Boa sorte!!</h3>
-              <p>Clique em "Iniciar" para iniciar o jogo</p>
-              <button onClick={() => generateRadonNumber(min, max)}>Iniciar</button>
-            </div>
-          ) : (
-            <div className='content-gamer'>
-              <div className='countKick'>
-                <p>{'Nº Chutes: ' + counter}</p>
-              </div>
-              <div className='viewerCount'>
-                {!numberScreen ? (
-                  <p>?</p>
-                ) : (
-                  <p className='escreenResult'>{secretNumber}</p>
-                )}
-              </div>
-                <form onSubmit={handleSubmit}>
-                  <input min='1' max='100' type="number" onChange={handleChange} placeholder='Digite um número.'/>
-                  <button type='submit'>Chutar</button>
-                </form>
-              <p className='textResult'>{textResult}</p>
-            </div>
-          )} 
+    <div className='container'>
+      <div className='content'>
+        <div className='title'>
+          <img src={imgBall} alt="Bola de cristal" />
+          <h1>Jogo de adivinhar o número.</h1>
         </div>
+        {!startGame ? (
+          <div className='viewerInitial'>
+            <h3>Para conseguir vencer o jogo, adivinhe qual o número foi gerado de forma aleatória de 1 a 100. Boa sorte!!</h3>
+            <p>Clique em "Iniciar" para iniciar o jogo</p>
+            <button onClick={() => generateRadonNumber(min, max)}>Iniciar</button>
+          </div>
+        ) : (
+          <div className='content-gamer'>
+            <div className='countKick'>
+              <p>{'Nº Chutes: ' + counter}</p>
+            </div>
+            <div className='viewerCount'>
+              {!numberScreen ? (
+                <p>?</p>
+              ) : (
+                <p className='escreenResult'>{secretNumber}</p>
+              )}
+            </div>
+              <form onSubmit={handleSubmit}>
+                <input min='1' max='100' type="number" value={inputValue} onChange={handleChange} placeholder='Digite um número.'/>
+                <button type='submit'>Chutar</button>
+              </form>
+            <p className='textResult'>{textResult}</p>
+          </div>
+        )} 
       </div>
-    </>
+    </div>
   )
 }
 
